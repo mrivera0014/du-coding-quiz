@@ -11,6 +11,7 @@ var correct = true
 var current = 0
 
 var questionEl = document.getElementById("question")
+
 var questionDisplayEl = document.getElementById("questionDisplay")
 
 var choices = document.getElementById("choices")
@@ -52,13 +53,12 @@ var questions = [
 
 //FUNCTIONS I WILL NEED
 
-//a timer to be set after the start button has been clicked-eventListener timerInterval setInterval 
-function setTimer() {
-    var startTime = 60;
+// function setTimer() {
+//     var startTime = 60;
 
 
 
-}
+// }
 
 
 function beginQuiz() {
@@ -97,6 +97,7 @@ function buttons() {
 }
 
 function displayQuiz() {
+    event.stopPropagation();
     var currentQuestion = questions[current]
     console.log(currentQuestion.question)
     //for loop goes here
@@ -110,23 +111,20 @@ function displayQuiz() {
         options[i].textContent = currentQuestion.choices[i]
         console.log(currentQuestion.choices[i])
         console.log(choices)
-    }
 
-}
+    }
+} button.addEventListener("click", checkAnswer())
+console.log(checkAnswer())
 
 
 
 function checkAnswer() {
-    choiceNode.setAttribute("value", choices)
-    console.log("questions.choices: ", questions.choices)
-    console.log("questions.answer: ", questions.answer)
-
-    if (questions.choices !== questions.answer) {
+    if (currentQuestion.questions.choices !== currentQuestion.questions.answer) {
         time = -10;
-
+        // console.log("currentQuestion: ", currentQuestion)
+        // console.log("currentQuestion.choices[i]", currentQuestion.choices[i])
+        // console.log("choices", choices)
     }
-
-
 
 
 
