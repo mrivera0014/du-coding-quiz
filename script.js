@@ -11,18 +11,22 @@ var correct = true
 var current = 0
 
 var questionEl = document.getElementById("question")
+var questionDisplayEl = document.getElementById("questionDisplay")
 
 var choices = document.getElementById("choices")
+
 
 var timer = document.getElementById("time")
 
 var timerInterval
 
+var options = document.getElementsByClassName("options")
+
 var questions = [
     {
         question: "first question",
-        choices: ["one", "two", "three"],
-        answer: "this one"
+        choices: ["one", "two", "three", "answer"],
+        answer: "answer"
 
     },
     {
@@ -86,6 +90,10 @@ function buttons() {
     var answer = document.createElement("button")
     answer.textContent = button
     choices.appendChild(answer)
+
+
+
+
 }
 
 function displayQuiz() {
@@ -94,14 +102,14 @@ function displayQuiz() {
     //for loop goes here
     for (var i = 0; i < currentQuestion.question.length; i++) {
 
-        questionEl.textContent = currentQuestion.question
+        questionDisplayEl.textContent = currentQuestion.question
         console.log(currentQuestion.question)
     }
 
     for (var i = 0; i < currentQuestion.choices.length; i++) {
-        choices.textContent = currentQuestion.choices[i]
+        options[i].textContent = currentQuestion.choices[i]
         console.log(currentQuestion.choices[i])
-        buttons()
+        console.log(choices)
     }
 
 }
