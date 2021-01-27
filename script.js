@@ -117,7 +117,17 @@ function displayQuiz() {
 
 
 function checkAnswer() {
-    // if this value does not equal question [question.answer]
+    choiceNode.setAttribute("value", choices)
+    console.log("questions.choices: ", questions.choices)
+    console.log("questions.answer: ", questions.answer)
+
+    if (questions.choices !== questions.answer) {
+        time = -10;
+
+    }
+
+
+
 
 
 }
