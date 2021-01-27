@@ -12,26 +12,41 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <nav class="nav">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             <a class="nav-link" href="#">High Scores</a>
         </nav>
-    </div>
-    <main class="main">
+    </div> -->
+    <div id="timer"><span id="time">0</span></div>
+    <main id="main">
         <h1>How Much Do You Know About Coding?</h1>
         <p>Want to find out? Take this timed quiz to find out! Careful not to get any wrong answers though or your time
-            will go down by 10 seconds.
+            will go decrease by 10 seconds.
         </p>
-        <button class="start">Start</button>
-
-
-
-
+        <button id="start">Start</button>
 
 
 
     </main>
+    <div class="hidden" id="question">
+        <h1 id="questionDisplay"></h1>
+        <div id="choices"></div>
+
+
+
+    </div>
+    <div class="hidden" id="scores">
+        <h1>Your final score is: <span id="finalScore"></span></h1>
+        <p>Initials Here</p>
+        <input type="text" id="initials" />
+
+    </div>
+
+
+
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

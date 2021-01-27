@@ -1,50 +1,216 @@
 // Variables that I will need
 
-var time =
+var time = 60
 
 var button = document.getElementById("start")
 
-var playerScore =
+var playerScore
 
 var correct = true
 
-var questions {
-    qOne = "Some question"
-    qTwo = "Some question"
-    qThree = "Some question"
-    qFour = "Some question"
-}
+var current = 0
+
+var questionEl = document.getElementById("question")
+
+var choices = document.getElementById("choices")
+
+var timer = document.getElementById("time")
+
+var timerInterval
+
+var questions = [
+    {
+        question: "first question",
+        choices: ["one", "two", "three"],
+        answer: "this one"
+
+    },
+    {
+        question: "second question",
+        choices: ["one", "two", "three"],
+        answer: "this one"
+
+    },
+    {
+        question: "third question",
+        choices: ["one", "two", "three"],
+        answer: "this one"
+
+    },
+    {
+        question: "fourth question",
+        choices: ["one", "two", "three"],
+        answer: "this one"
+
+    }
+
+]
 
 //FUNCTIONS I WILL NEED
 
 //a timer to be set after the start button has been clicked-eventListener timerInterval setInterval 
 function setTimer() {
+    var startTime = 60;
+
+
 
 }
 
-//at the same time I need the first question to appear when the start button has been pressed-
 
-function
+function beginQuiz() {
 
+    var landingPage = document.getElementById("main")
+    landingPage.setAttribute("class", "hidden")
 
-
+    questionEl.removeAttribute("class")
     //as the user selects their answers I need 2 things to happen
 
-    function
+    timerInterval = setInterval(function () {
 
-    //FIRST- if the selected answer is wrong the time needs to decrease by x amount of seconds
+        time--
+        timer.textContent = time
+        if (time <= 0) {
+            endQuiz()
 
-    //once the player has answered all questions I need their score
+        }
 
-    score = "endTime"
+    }, 1000)
 
-//once we have their score we can send a message thy player their score
 
-function sendMessage() { }
+    timer.textContent = time
+    displayQuiz()
 
-function
-    //SECOND- as the answers are selected I need the next question to appear
+}
 
-    //to set everything off I need the first event to happen
+function buttons() {
+    var answer = document.createElement("button")
+    answer.textContent = button
+    choices.appendChild(answer)
+}
 
-    setTimer()
+function displayQuiz() {
+    var currentQuestion = questions[current]
+    console.log(currentQuestion.question)
+    //for loop goes here
+    for (var i = 0; i < currentQuestion.question.length; i++) {
+
+        questionEl.textContent = currentQuestion.question
+        console.log(currentQuestion.question)
+    }
+
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+        choices.textContent = currentQuestion.choices[i]
+        console.log(currentQuestion.choices[i])
+        buttons()
+    }
+
+}
+
+
+
+function checkAnswer() {
+    // if this value does not equal question [question.answer]
+
+
+}
+
+
+function endQuiz() {
+
+
+
+}
+
+var startButton = document.getElementById("start")
+startButton.onclick = beginQuiz
+
+
+//function that takes in arr
+//add number in arr
+//return total
+
+//function that takes is array
+//loop thru the arr ? add together?
+//return the total
+
+//function that takes in arr
+// declare total 
+//loop thru arr
+//add current # to total 
+//return total
+
+//function that takes in arr
+// declare total 
+//loop thru arr
+//declare currentNum
+//return total
+
+
+
+//HTML???
+//need a start button
+//timer
+//questions
+//choices
+//clock
+//game over screen
+
+
+//JS
+
+// DATA--Questions
+
+
+
+//Global VAriables
+
+
+
+//Functions
+
+
+
+//Event Listeners
+
+
+
+//click start button
+//start timer
+//display question anf choices
+//if answer correct, show next question
+//if incorrect, subtract time
+// when all questions answered, game over
+//when time reaches 0, game over
+
+
+
+//click start button
+//need to reference start button
+//add onClick event
+
+
+//start timer
+//re timer element on DOM
+//use set interval to run that timer
+
+//display question and choices
+//reference DOM again
+//loop thru questions
+//display questions of DOM
+//loop thur choices
+//display each choice on DOM
+
+//check answer against choice
+//if answer correct, show next question
+//????? 
+//if incorrect subtract time
+//time = time - 10 seconds
+
+
+// when all questions answered, game over
+//when time reaches 0, game over
+
+
+
+
+
