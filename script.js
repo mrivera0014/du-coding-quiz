@@ -99,36 +99,62 @@ function buttons() {
 function displayQuiz() {
     event.stopPropagation();
     var currentQuestion = questions[current]
-    console.log(currentQuestion.question)
+    // console.log(currentQuestion.question)
     //for loop goes here
     for (var i = 0; i < currentQuestion.question.length; i++) {
 
         questionDisplayEl.textContent = currentQuestion.question
-        console.log(currentQuestion.question)
+        // console.log(currentQuestion.question)
     }
 
     for (var i = 0; i < currentQuestion.choices.length; i++) {
         options[i].textContent = currentQuestion.choices[i]
-        console.log(currentQuestion.choices[i])
-        console.log(choices)
+        // console.log(currentQuestion.choices[i])
+        // console.log(choices)
 
     }
-} button.addEventListener("click", checkAnswer())
-console.log(checkAnswer())
+    // button.addEventListener("click", checkAnswer())
+    // console.log(click, checkAnswer)
+    var optionsButton = document.getElementsByClassName("options")
+    optionsButton.onclick = checkAnswer
+
+}
+
 
 
 
 function checkAnswer() {
-    if (currentQuestion.questions.choices !== currentQuestion.questions.answer) {
-        time = -10;
-        // console.log("currentQuestion: ", currentQuestion)
-        // console.log("currentQuestion.choices[i]", currentQuestion.choices[i])
-        // console.log("choices", choices)
-    }
-
+    if (questions[current].choices !== questions[current].answer) {
+        time = time - 10;
+        timer.textContent = time
+    } console.log(this.textContent)
 
 
 }
+
+// if (questions.choices = questions.answer) {
+//     time = time - 10
+
+// }
+
+// if (questions[current].answer !== questions[current].choices) {
+//     time = time - 10;
+// }
+
+
+
+// if (this.value !== questions[current].answer) {
+//     time -= 10
+// }
+
+
+// if (currentQuestion.questions.choices !== currentQuestion.questions.answer) {
+//     time = time - 10;
+// }
+// console.log("currentQuestion: ", currentQuestion)
+// console.log("currentQuestion.choices[i]", currentQuestion.choices[i])
+// console.log("choices", choices)
+
 
 
 function endQuiz() {
